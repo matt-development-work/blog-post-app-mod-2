@@ -1,0 +1,13 @@
+<h1><%= @post.title %></h1>
+
+<h2><%= @post.author %></h2>
+
+<p><%= @post.content %></p>
+
+<div>
+    <%= link_to "Edit this post", edit_post_path(@post) %>
+</div>
+
+<p><%= form_tag post_path(@post), method: "DELETE" do %>
+    <%= submit_tag "Delete Post" %></p>
+<% end %>

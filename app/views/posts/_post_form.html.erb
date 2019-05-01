@@ -1,0 +1,16 @@
+<%= form_for @post do |p| %>
+
+    <%= p.collection_select(:topic_id, Topic.all, :id, :name, {:prompt => 'Select a Topic'}) %>
+
+    <%= p.label :title %>
+    <%= p.text_field :title %>
+
+    <%= p.label :author %>
+    <%= p.text_field :author %>
+
+    <%= p.label :content %>
+    <%= p.text_area :content %>
+
+    <%= p.submit "Publish Post" %>
+
+<% end %>
