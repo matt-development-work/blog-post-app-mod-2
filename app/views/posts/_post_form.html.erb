@@ -1,5 +1,7 @@
+<div>
 <%= form_for @post do |p| %>
 
+    <%= p.label :topic %>
     <%= p.collection_select(:topic_id, Topic.all, :id, :name, {:prompt => 'Select a Topic'}) %>
 
     <%= p.label :title %>
@@ -11,6 +13,7 @@
     <%= p.label :content %>
     <%= p.text_area :content %>
 
-    <%= p.submit "Publish Post" %>
+    <%= p.submit button_text %>
 
 <% end %>
+</div>

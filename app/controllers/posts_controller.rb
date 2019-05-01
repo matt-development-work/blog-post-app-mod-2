@@ -14,7 +14,11 @@ class PostsController < ApplicationController
 
   def create
     @post = Post.create(strong_params)
-    redirect_to @post
+    if @post.errors
+      render :new
+    else
+      redirect_to @post
+    end
   end
 
   def edit
@@ -24,7 +28,11 @@ class PostsController < ApplicationController
   def update
     @post = Post.find(params[:id])
     @post.update(strong_params)
-    redirect_to post_path(@post)
+    if @post.errors
+      render :new
+    else
+      redirect_to post_path(@post)
+    end
   end
 
   def destroy

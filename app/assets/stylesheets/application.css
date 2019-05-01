@@ -13,3 +13,35 @@
  *= require_tree .
  *= require_self
  */
+
+@import url('https://fonts.googleapis.com/css?family=Gugi');
+
+ html {
+   font-family: 'Gugi';
+ }
+
+ form > * {
+   display: block;
+ }
+
+form > label {
+   display: block;
+   margin-bottom: 6px;
+}
+
+ form > input, form > select, form > textarea {
+    margin-bottom: 14px;
+ }
+
+ .field_with_errors {
+     display: block;
+     margin-bottom: 6px;
+ }
+
+ .field_with_errors label {
+     color: red;
+ }
+
+ .error {
+     color: red;
+ }
