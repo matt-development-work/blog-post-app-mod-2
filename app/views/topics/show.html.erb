@@ -2,6 +2,14 @@
 
 <h2><%= @topic.description %></h2>
 
+<h2>Posts</h2>
+<ul>
+    <% @topic.posts.each do |p| %>
+        <li><%= link_to p.title, post_path(p) %></li>
+    <% end %>
+</ul>
+
 <div>
     <%= link_to "Edit this topic", edit_topic_path(@topic) %>
+    <%= link_to "View all topics", topics_path %>
 </div>

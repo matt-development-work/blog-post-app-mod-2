@@ -1,3 +1,5 @@
 <h1>Create a New Topic</h1>
 
+<%= render partial: "shared/error_list", locals: {obj: @topic} %>
+
 <%= render partial: "topic_form", locals: {button_text: "Create Topic"} %>

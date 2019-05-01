@@ -1,3 +1,5 @@
 <h1>Write a New Post</h1>
 
+<%= render partial: "shared/error_list", locals: {obj: @post} %>
+
 <%= render partial: "post_form", locals: {button_text: "Publish Post"} %>

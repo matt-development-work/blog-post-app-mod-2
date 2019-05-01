@@ -1,3 +1,5 @@
 <h1>Edit this Topic</h1>
 
+<%= render partial: "shared/error_list", locals: {object: @topic} %>
+
 <%= render partial: "topic_form", locals: {button_text: "Edit Topic"} %>

@@ -14,10 +14,10 @@ class PostsController < ApplicationController
 
   def create
     @post = Post.create(strong_params)
-    if @post.errors
-      render :new
+    if @post.errors.empty?
+      redirect_to post_path(@post)
     else
-      redirect_to @post
+      render :new
     end
   end
 
@@ -28,10 +28,10 @@ class PostsController < ApplicationController
   def update
     @post = Post.find(params[:id])
     @post.update(strong_params)
-    if @post.errors
-      render :new
-    else
+    if @post.errors.empty?
       redirect_to post_path(@post)
+    else
+      render :edit
     end
   end
 

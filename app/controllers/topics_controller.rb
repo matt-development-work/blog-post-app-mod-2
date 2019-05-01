@@ -14,10 +14,10 @@ class TopicsController < ApplicationController
 
   def create
     @topic = Topic.create(strong_params)
-    if @topic.errors
-      render :new
-    else
+    if @topic.errors.empty?
       redirect_to @topic
+    else
+      render :new
     end
   end
 
@@ -28,10 +28,10 @@ class TopicsController < ApplicationController
   def update
     @topic = Topic.find(params[:id])
     @topic.update(strong_params)
-    if @topic.errors
-      render :new
-    else
+    if @topic.errors.emtpy?
       redirect_to topic_path(@topic)
+    else
+      render :edit
     end
   end
 
